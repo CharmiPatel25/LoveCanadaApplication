@@ -18,13 +18,17 @@ public class PlaceDetails extends AppCompatActivity {
         txtName = findViewById(R.id.txtName);
         txtAddress = findViewById(R.id.txtAddress);
         txtCity = findViewById(R.id.txtCity);
-        txtProvience = findViewById(R.id.textProvience);
+        txtProvience = findViewById(R.id.txtProvience);
         txtLink = findViewById(R.id.txtLink);
-        txtDetails = findViewById(R.id.txtCompDescription);
+        txtDetails = findViewById(R.id.txtDesc);
         if (getIntent().getExtras() != null) {
             details = (CanadaAttraction) getIntent().getSerializableExtra("PlaceDetails");
             txtName.setText(details.getPlaceName().toString());
-
+            txtAddress.setText(details.getAddress().toString());
+            txtCity.setText(details.getCity().toString());
+            txtProvience.setText(details.getProvince().toString());
+            txtLink.setText(details.getLink().toString());
+            txtDetails.setText(details.getDescription().toString());
         }
     }
 }
